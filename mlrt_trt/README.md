@@ -277,8 +277,8 @@ inference instead of 58 MB / 25 MB). See `example_50p_yuv.avs`. Requirements: `i
 (`models\rife_v2\rife_v4.17_lite_fp16io.engine`, or `onnx_path=` to build one on demand: engines get `_fp16io` in their name),
 no tiling. Output has the input's pixel type and size. The old RGB interface is unchanged (bit-identical output).
 
-Extra parameters (passed through `mlrt_RIFE_trt` to `mlrt_trt`): `matrix` ("709" default / "601" / "2020"), `range`
-("limited" default / "full"), `pad_multiple` (32), `cudadownload` (true), `mvtools_cuda` (true). Chroma is assumed sited like
+Extra parameters (`matrix`, `range`, `pad_multiple`, `cudadownload` are passed through `mlrt_RIFE_trt` to `mlrt_trt`): `matrix` ("709" default / "601" / "2020"), `range`
+("limited" default / "full"), `pad_multiple` (32), `cudadownload` (true); `mlrt_trt` itself also has `mvtools_cuda` (true; not exposed by the wrapper). Chroma is assumed sited like
 MPEG-2/H.264 (left, vertically centred); conversions match zimg (Catmull-Rom, mirrored edges). `sc_threshold` is in 8-bit luma
 units in YUV mode.
 
