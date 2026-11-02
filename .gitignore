@@ -360,3 +360,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# cuda_rife (mlrt_trt) build outputs and local test artifacts
+mlrt_trt/build/
+*.engine
+*.cache
+*.exe
+*.obj
+*.exp
+*.pdb
+*.bak_pre_yuv
